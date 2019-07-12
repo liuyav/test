@@ -2,21 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
-  <style>
-    /* 变量声明 */
-    html {
-      --bg-color: #ccc;
-    }
-
-    body {
-      background: var(--bg-color, #000);
-    }
-  </style>
+  <title>自定义事件实现的三组方式（todo）</title>
 </head>
 <body>
   <a href="javascript:;" id="app">link</a>
   <script>
+    // 1. CustomEvent
     let dom = document.querySelector('#app');
     // 绑定事件， 传递过来的值可以通过ev.detail 来获取
     dom.addEventListener('log-in',(ev) => {
@@ -28,15 +19,10 @@
     dom.dispatchEvent(new CustomEvent('log-in',{
         detail:'hello'
     }))
+
+
+    // 2. CreateEvent
+    // 3. js映射
   </script>
-  <!--
-      1. 变量值只能用作属性值，不能用作属性名
-      2. 如果变量值是一个字符串，可以与其他字符串拼接。
-      3. 如果变量值是数值，不能与数值单位直接连用（用 calc() 函数）
-      4. 如果变量值带有单位，就不能写成字符串。
-      5. 同一个 CSS 变量，可以在多个选择器内声明。读取的时候，优先级最高的声明生效。这与 CSS 的"层叠"（cascade）规则是一致的。
-      6. 在响应式布局的media命令里面声明变量，使得不同的屏幕宽度有不同的变量值。
-      7. 对于不支持 CSS 变量的浏览器（层叠降级写法）
-  -->
 </body>
 </html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Web VR App</title>
+  <script src="js/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-assets>
+      <a-asset-item id="myModelObj" src="4.obj"></a-asset-item>
+      <a-asset-item id="myModelMtl" src="4.mtl"></a-asset-item>
+    </a-assets>
+
+    <a-entity obj-model="obj: #myModelObj; mtl: #myModelMtl" scale="1 1 1" position="0 -400 1000" rotation="0 0 0">
+      <a-animation attribute="position" from="0 -600 1000" to="-2000 0 1000" dur="10000" repeat="indefinite" fill="forwards"></a-animation>
+    </a-entity>
+
+  </a-scene>
+  <script>
+    AFRAME.registerPrimitive('a-xxx', {
+      defaultComponents: {
+
+      },
+      mappings: {
+        
+      }
+    })
+  </script>
+</body>
+</html>

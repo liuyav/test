@@ -6,7 +6,7 @@ const filter2 = ()=> {
   return 2
 }
 
-export {
+export default {
   filter1,
   filter2
 }

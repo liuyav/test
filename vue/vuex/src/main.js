@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import store from './store/index'
-import * as filter from './filter/index'
+import filter from './filter/index'
 
 Vue.config.productionTip = false
 

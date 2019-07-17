@@ -1,7 +1,9 @@
 <template>
   <div class="hello">
-    {{num2 | filter1}}
-    {{num}}
+    <h3>
+      {{num2 | filter1}}
+      {{num}}
+    </h3>
   </div>
 </template>
 
@@ -31,6 +33,7 @@ export default {
 <style scoped lang="scss">
 h3 {
   margin: 40px 0 0;
+  size: 100% 50px;
 }
 ul {
   list-style-type: none;

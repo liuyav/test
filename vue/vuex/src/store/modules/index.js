@@ -1,4 +1,6 @@
-const state = {}
+const state = {
+  num: 2
+}
 const getters = {}
 const mutations = {}
 const actions = {}

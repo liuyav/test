@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    {{num2 | filter1}}
     {{num}}
   </div>
 </template>
@@ -13,10 +14,15 @@ export default {
   props: {
     msg: String
   },
+  data() {
+    return {
+      num2: 222
+    }
+  },
   computed: {
-    ...mapState({
-      num
-    })
+    ...mapState('index', [
+      'num'
+    ])
   }
 }
 </script>

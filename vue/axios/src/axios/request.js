@@ -20,10 +20,7 @@ export function get(url, config={}) {
 // post 方法
 export function post(url, data={}, config={}) {
   return new Promise((resolve, rejected)=> {
-    instance.post({
-      url,
-      data,
-    }).then(res => {
+    instance.post(url, data, config).then(res => {
       resolve(res)
     }).catch(err => {
       rejected(err)

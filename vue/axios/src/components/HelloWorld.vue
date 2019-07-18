@@ -14,6 +14,7 @@ export default {
   },
   created() {
     this.Http.getData();
+    this.Http.sendData();
   }
 }
 </script>

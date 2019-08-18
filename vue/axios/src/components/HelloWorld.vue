@@ -1,20 +1,41 @@
 <template>
   <div class="hello">
-    
+    <mark-down @on-save="saveEdit" :initialValue="initVal"></mark-down>
   </div>
 </template>
 
 <script>
+import MarkDown from 'vue-meditor'
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      initVal: ''
     }
   },
+  components:{
+    MarkDown
+  },
   created() {
-    this.Http.getData();
-    this.Http.sendData();
+    //this.Http.getData();
+    //this.Http.sendData();
+    this.Http.modifyArticleCont({
+      title: 'test'
+    }).then(res => {
+      this.initVal = res.data.data.markdown
+    })
+  },
+  methods: {
+    // saveEdit(cont) {
+    //   this.Http.saveArticleCont({
+    //     title: 'test',
+    //     decr: 'decr',
+    //     markdown: cont.value,
+    //     content: cont.html
+    //   })
+    //   console.log(cont)
+    // }
   }
 }
 </script>
